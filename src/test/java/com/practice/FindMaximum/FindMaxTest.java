@@ -29,4 +29,20 @@ public class FindMaxTest {
 		int x = fm.findMaxNumber(10, 2, 50);
 		Assert.assertEquals((Integer)50, (Integer)x);
 	}
+	
+	@Test
+	public void Max_float_at_first_position() {
+		float x = FindMaxMain.findMaxNumber(10.0f, 2.0f, 5.0f);
+		Assert.assertEquals(10.0f, x, 0.0f);
+		}
+	@Test
+	public void Max_float_at_second_position() {
+		float x = FindMaxMain.findMaxNumber(10.0f, 20.0f, 5.0f);
+		Assert.assertEquals(20.0f, x, 0.0f);
+		}
+	@Test
+	public void Max_float_at_third_position() {
+		float x = FindMaxMain.findMaxNumber(10.0f, 2.0f, 50.0f);
+		Assert.assertEquals(50.0f, x, 0.0f);
+		}
 }
