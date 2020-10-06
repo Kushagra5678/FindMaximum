@@ -32,17 +32,34 @@ public class FindMaxTest {
 	
 	@Test
 	public void Max_float_at_first_position() {
-		float x = FindMaxMain.findMaxNumber(10.0f, 2.0f, 5.0f);
+		float x = fm.findMaxNumber(10.0f, 2.0f, 5.0f);
 		Assert.assertEquals(10.0f, x, 0.0f);
 		}
 	@Test
 	public void Max_float_at_second_position() {
-		float x = FindMaxMain.findMaxNumber(10.0f, 20.0f, 5.0f);
+		float x = fm.findMaxNumber(10.0f, 20.0f, 5.0f);
 		Assert.assertEquals(20.0f, x, 0.0f);
 		}
 	@Test
 	public void Max_float_at_third_position() {
-		float x = FindMaxMain.findMaxNumber(10.0f, 2.0f, 50.0f);
+		float x = fm.findMaxNumber(10.0f, 2.0f, 50.0f);
 		Assert.assertEquals(50.0f, x, 0.0f);
 		}
+	
+	@Test
+	public void Max_String_at_first_position() {
+		String x = fm.findMaxNumber("Peach", "Apple", "Banana");
+		Assert.assertEquals("Peach", x);
+		}
+	@Test
+	public void Max_String_at_second_position() {
+		String x = fm.findMaxNumber("Banana", "Peach", "Apple");
+		Assert.assertEquals("Peach", x);
+		}
+	@Test
+	public void Max_String_at_third_position() {
+		String x = fm.findMaxNumber("Banana", "Apple", "Peach");
+		Assert.assertEquals("Peach", x);
+		}
+
 }
