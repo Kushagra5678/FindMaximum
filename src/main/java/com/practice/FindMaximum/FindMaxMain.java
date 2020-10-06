@@ -1,23 +1,25 @@
 package com.practice.FindMaximum;
 
-public class FindMaxMain<E extends Comparable<E>> {
-	E numOne;
-	E numTwo;
-	E numThree;
+import java.util.*;
 
-	FindMaxMain(E numOne, E numTwo, E numThree) {
-		this.numOne = numOne;
-		this.numTwo = numTwo;
-		this.numThree = numThree;
+public class FindMaxMain<E extends Comparable<E>> {
+	E[] array;
+
+	FindMaxMain(E[] array) {
+		this.array = array;
 	}
 
-	public <E extends Comparable<E>> E findMaxNumber(FindMaxMain<E> mf) {
-		E max = (E) mf.numOne;
-		if (mf.numTwo.compareTo(max) > 0)
-			max = (E) mf.numTwo;
-		if (mf.numThree.compareTo(max) > 0)
-			max = (E) mf.numThree;
-		return max;
+	public static <E extends Comparable> E find_maximum(FindMaxMain mf) {
+
+		Optional<E> check = Optional.ofNullable(mf.array[mf.array.length - 1]);
+		if (check != null) {
+			Arrays.sort(mf.array, Collections.reverseOrder());
+			return (E) mf.array[0];
+		} 
+		else {
+			System.out.println("Array is empty!!!!");
+			return null;
+		}
 	}
 
 }

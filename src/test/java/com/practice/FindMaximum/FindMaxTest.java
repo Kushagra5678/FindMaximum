@@ -7,57 +7,38 @@ import org.junit.Test;
 public class FindMaxTest {
 
 	@Test
-	public void Max_number_at_first_position() {
-		FindMaxMain fm = new FindMaxMain(10, 2, 5);
-		Assert.assertEquals((Integer) 10, (Integer) fm.findMaxNumber(fm));
+	public void test_integer_input1() {
+		Integer[] array = { 1, 2, 6, 3 };
+		FindMaxMain mf = new FindMaxMain(array);
+		Assert.assertEquals((Integer) 6, (Integer) FindMaxMain.find_maximum(mf));
 	}
 
 	@Test
-	public void Max_number_at_second_position() {
-		FindMaxMain fm = new FindMaxMain(10, 20, 5);
-		Assert.assertEquals((Integer) 20, (Integer) fm.findMaxNumber(fm));
+	public void test_integer_input2() {
+		Integer[] array = { 1, 5, 2, 7, 5, 0 };
+		FindMaxMain mf = new FindMaxMain(array);
+		Assert.assertEquals((Integer) 7, (Integer) FindMaxMain.find_maximum(mf));
 	}
 
 	@Test
-	public void Max_number_at_third_position() {
-		FindMaxMain fm = new FindMaxMain(10, 2, 50);
-		Assert.assertEquals((Integer) 50, (Integer) fm.findMaxNumber(fm));
+	public void test_integer_input3() {
+		Integer[] array = { 1, 2, 6, 3, 6, 5, 3 };
+		FindMaxMain mf = new FindMaxMain(array);
+		Assert.assertEquals((Integer) 6, (Integer) FindMaxMain.find_maximum(mf));
 	}
 
 	@Test
-	public void Max_float_at_first_position() {
-		FindMaxMain fm = new FindMaxMain(10.0f, 2.0f, 5.0f);
-		Assert.assertEquals((Float) 10.0f, (Float) fm.findMaxNumber(fm));
+	public void test_float_input() {
+		Float[] array = { 1.0f, 4.0f, 6.0f, 5.0f, 3.0f };
+		FindMaxMain mf = new FindMaxMain(array);
+		Assert.assertEquals((Float) 6.0F, (Float) FindMaxMain.find_maximum(mf));
 	}
 
 	@Test
-	public void Max_float_at_second_position() {
-		FindMaxMain fm = new FindMaxMain(10.0f, 20.0f, 5.0f);
-		Assert.assertEquals((Float) 20.0f, (Float) fm.findMaxNumber(fm));
-	}
-
-	@Test
-	public void Max_float_at_third_position() {
-		FindMaxMain fm = new FindMaxMain(10.0f, 2.0f, 50.0f);
-		Assert.assertEquals((Float) 50.0f, (Float) fm.findMaxNumber(fm));
-	}
-
-	@Test
-	public void Max_String_at_first_position() {
-		FindMaxMain fm = new FindMaxMain("Peach", "Apple", "Banana");
-		Assert.assertEquals("Peach", fm.findMaxNumber(fm));
-	}
-
-	@Test
-	public void Max_String_at_second_position() {
-		FindMaxMain fm = new FindMaxMain("Apple", "Peach", "Banana");
-		Assert.assertEquals("Peach", fm.findMaxNumber(fm));
-	}
-
-	@Test
-	public void Max_String_at_third_position() {
-		FindMaxMain fm = new FindMaxMain("Banana", "Apple", "Peach");
-		Assert.assertEquals("Peach", fm.findMaxNumber(fm));
+	public void test_string_input() {
+		String[] array = { "Peach", "Apple", "Orange", "Raspberry" };
+		FindMaxMain mf = new FindMaxMain(array);
+		Assert.assertEquals("Raspberry", FindMaxMain.find_maximum(mf));
 	}
 
 }
